@@ -269,7 +269,7 @@ namespace Microsoft.Azure.Management.Sql.Fluent
             this.databaseCreatableMap.Remove(databaseName);
 
             this.databaseCreatableMap.Add(databaseName,
-                this.Databases().Define(databaseName).WithoutElasticPool().WithoutSourceDatabaseId());
+                (SqlDatabase.Definition.IWithCreate) this.Databases().Define(databaseName));
 
             return this;
         }
@@ -326,10 +326,9 @@ namespace Microsoft.Azure.Management.Sql.Fluent
         {
             this.databaseCreatableMap.Remove(databaseName);
 
-            this.databaseCreatableMap.Add(databaseName, this.Databases()
+            this.databaseCreatableMap.Add(databaseName,(SqlDatabase.Definition.IWithCreate) this.Databases()
                 .Define(databaseName)
-                .WithExistingElasticPool(elasticPoolName)
-                .WithoutSourceDatabaseId());
+                .WithExistingElasticPool(elasticPoolName));
         }
 
         ///GENMHASH:7DDEADFB2FB27BEC42C0B993AB65C3CB:0D8D2B5DE282DE762F97F0E96C5562F9

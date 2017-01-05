@@ -6,28 +6,20 @@ namespace Microsoft.Azure.Management.Sql.Fluent
     using Models;
     using System;
 
-    internal partial class UpgradeHintImpl 
+    /// <summary>
+    /// An immutable client-side representation of an Azure SQL database's Upgrade hint.
+    /// </summary>
+    public interface IUpgradeHintInterface  :
+        IWrapper<Models.UpgradeHint>
     {
         /// <summary>
         /// Gets Target ServiceLevelObjectiveId for upgrade hint.
         /// </summary>
-        System.Guid Microsoft.Azure.Management.Sql.Fluent.IUpgradeHint.TargetServiceLevelObjectiveId
-        {
-            get
-            {
-                return this.TargetServiceLevelObjectiveId();
-            }
-        }
+        System.Guid TargetServiceLevelObjectiveId { get; }
 
         /// <summary>
         /// Gets Target ServiceLevelObjective for upgrade hint.
         /// </summary>
-        string Microsoft.Azure.Management.Sql.Fluent.IUpgradeHint.TargetServiceLevelObjective
-        {
-            get
-            {
-                return this.TargetServiceLevelObjective();
-            }
-        }
+        string TargetServiceLevelObjective { get; }
     }
 }

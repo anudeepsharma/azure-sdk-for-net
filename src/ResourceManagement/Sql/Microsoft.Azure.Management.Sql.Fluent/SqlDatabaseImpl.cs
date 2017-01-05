@@ -24,6 +24,8 @@ namespace Microsoft.Azure.Management.Sql.Fluent
         ISqlDatabase,
         IDefinition,
         IUpdate,
+        SqlDatabase.Definition.IWithCollation,
+        SqlDatabase.Definition.IWithMaxSizeBytes,
         IWithParentResource<ISqlDatabase, ISqlServer>
     {
         internal IDatabasesOperations innerCollection;
